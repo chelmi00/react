@@ -1,27 +1,28 @@
-import React from 'react';
-import './App.css';
+import { render } from "@testing-library/react";
+import { Component } from "react";
+import Users from "./Users";
 
-function Welcome(props) {
-  return (
-    <h1>Hello {props.user}</h1>
-  );
-}
+class App extends Component {
+  state = {
+    users: [
+      {name: 'Bob'},
+      {name: 'Alice'}
+    ]
+  };
 
-class Welcome2 extends React.Component {
-  render() {
-    return (
-      <h1>Hello, {this.props.user}!</h1>
-    );
+  removeUser = (index) => {
+    const { users } = this.state;
+    this.setState({
+      users: users.filter((user, i) => {
+        return i !== index;
+      })
+    });
   }
-}
 
-function App() {
-  return (
-    <div>
-      <Welcome user="Bob" />
-      <Welcome2 user="Miguel" />
-    </div>
-  );
+  render() {
+    const { users } = this.state;
+    return (<Users users={users} removeUser={this.removeUser} />);
+  }
 }
 
 export default App;
