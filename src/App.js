@@ -1,28 +1,11 @@
-import { render } from "@testing-library/react";
-import { Component } from "react";
-import Users from "./Users";
+import logo from './logo.svg';
+import './App.css';
+import ExampleComponent from './ExampleComponent';
 
-class App extends Component {
-  state = {
-    users: [
-      {name: 'Bob'},
-      {name: 'Alice'}
-    ]
-  };
-
-  removeUser = (index) => {
-    const { users } = this.state;
-    this.setState({
-      users: users.filter((user, i) => {
-        return i !== index;
-      })
-    });
-  }
-
-  render() {
-    const { users } = this.state;
-    return (<Users users={users} removeUser={this.removeUser} />);
-  }
+function App() {
+  return (
+    <ExampleComponent />
+  );
 }
 
 export default App;

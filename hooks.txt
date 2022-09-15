@@ -1,0 +1,5 @@
+Never call hooks from inside a loop, condition or nested function
+Hooks should sit at the top level of your components
+Only call hooks from React functional components
+Never call a hook from a regular function
+Hooks can call other hooks
