@@ -1,14 +1,17 @@
-import React from 'react';
+import React from "react";
 
 export default function App() {
 
-  function hello(user) {
-    alert('Hello ' + user);
-  }
+  let isLoggedIn = false;
+  const RenderButton = () => {
+    if (isLoggedIn) {
+      return <button>Logout</button>;
+    } else {
+      return <button>Login</button>;
+    }
+  };
 
   return (
-    <button onClick={() => hello('Ana')}>Click me!</button>
+    <RenderButton />
   );
 }
-
-
