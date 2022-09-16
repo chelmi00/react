@@ -1,17 +1,22 @@
-import React from "react";
+import logo from './logo.svg';
+import './App.css';
 
-export default function App() {
+const UsersComponent = () => {
+  const users = ['Bob', 'Alice', 'John'];
 
-  let isLoggedIn = false;
-  const RenderButton = () => {
-    if (isLoggedIn) {
-      return <button>Logout</button>;
-    } else {
-      return <button>Login</button>;
-    }
-  };
+  const usersList = users.map((user) => {
+    return <li key={user}>{user}</li>;
+  });
 
   return (
-    <RenderButton />
+    <ul>{usersList}</ul>
   );
 }
+
+function App() {
+  return (
+    <UsersComponent />
+  );
+}
+
+export default App;
