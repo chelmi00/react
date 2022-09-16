@@ -1,17 +1,16 @@
 import React, {useState} from "react";
 
 export default function App() {
-  const [name, setName] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
+    console.log(e.target.name.value);
   }
   
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <p>
-        <input onChange={(e) => setName(e.target.value)} id="name" type="text" />
+        <input id="name" type="text" />
       </p>
       <button type="submit">Submit</button>
     </form>
