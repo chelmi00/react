@@ -4,12 +4,11 @@ export default function App() {
 
   let isLoggedIn = false;
 
+  const RenderButton = () => {
+    return isLoggedIn ? <button>Logout</button> : <button>Login</button>;
+  }
+
   return (
-    (function() {
-      if (isLoggedIn) {
-        return <button>Logout</button>;
-      } else {
-        return <button>Login</button>;
-      }
-    }) ());
+    <RenderButton />
+  );
 }
