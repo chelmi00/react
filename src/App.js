@@ -1,22 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
 
-const UsersComponent = () => {
-  const users = ['Bob', 'Alice', 'John'];
-
-  const usersList = users.map((user) => {
-    return <li key={user}>{user}</li>;
-  });
-
+export default function App() {
+  const [name, setName] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name);
+  }
+  
   return (
-    <ul>{usersList}</ul>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <p>
+        <input onChange={(e) => setName(e.target.value)} id="name" type="text" />
+      </p>
+      <button type="submit">Submit</button>
+    </form>
   );
 }
-
-function App() {
-  return (
-    <UsersComponent />
-  );
-}
-
-export default App;
