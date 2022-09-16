@@ -1,0 +1,3 @@
+onClick={funcion}
+	Si llamas a "funcion()", cada vez que carga el componente, se ejecutará la función
+	Para meter parámetros: "onClick={() => funcion('x')}"

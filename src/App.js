@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import ExampleComponent from './ExampleComponent';
+import React from 'react';
 
-function App() {
+export default function App() {
+
+  function hello(user) {
+    alert('Hello ' + user);
+  }
+
   return (
-    <ExampleComponent />
+    <button onClick={() => hello('Ana')}>Click me!</button>
   );
 }
 
-export default App;
+
