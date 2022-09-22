@@ -9,6 +9,7 @@ const Users = (props) => {
                     </p>
                 );
             })}
+            <button onClick={() => props.showAll()}>Show All</button>
         </div>
     );
 }

@@ -7,6 +7,10 @@ class App extends Component {
     users: [
       {name: 'Bob'},
       {name: 'Alice'}
+    ],
+    usuarios: [
+      {name: 'Bob'},
+      {name: 'Alice'}
     ]
   };
 
@@ -19,9 +23,18 @@ class App extends Component {
     });
   }
 
+  showAll = () => {
+    const { usuarios } = this.state;
+    this.setState({
+      users: usuarios.map((user) => {
+        return user;
+      })
+    });
+  }
+
   render() {
     const { users } = this.state;
-    return (<Users users={users} removeUser={this.removeUser} />);
+    return (<Users users={users} removeUser={this.removeUser} showAll={this.showAll} />);
   }
 }
 
